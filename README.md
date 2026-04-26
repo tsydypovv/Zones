@@ -22,6 +22,57 @@ It does not contain the private implementation of the main `Zones` plugin.
 mvn -q -DskipTests package
 ```
 
+## Dependency Setup
+
+At the moment the simplest public integration path is `JitPack`.
+
+### Maven
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.tsydypovv</groupId>
+        <artifactId>Zones</artifactId>
+        <version>master-SNAPSHOT</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
+
+### Gradle
+
+```gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly 'com.github.tsydypovv:Zones:master-SNAPSHOT'
+}
+```
+
+### Recommended Versioning
+
+For real plugin releases it is better to use Git tags instead of `master-SNAPSHOT`.
+
+Example:
+
+```xml
+<dependency>
+    <groupId>com.github.tsydypovv</groupId>
+    <artifactId>Zones</artifactId>
+    <version>v0.1.0</version>
+    <scope>provided</scope>
+</dependency>
+```
+
 ## Getting The API
 
 Use Bukkit `ServicesManager`:
